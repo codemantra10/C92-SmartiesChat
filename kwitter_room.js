@@ -1,11 +1,11 @@
 var firebaseConfig = {
-      apiKey: "AIzaSyCcudqVi9h6_HnK-N40IQubcHgAE0TWCSk",
-      authDomain: "smartiesfanchat.firebaseapp.com",
-      databaseURL:"https://smartiesfanchat-default-rtdb.firebaseio.com/",
-      projectId: "smartiesfanchat",
-      storageBucket: "smartiesfanchat.appspot.com",
-      messagingSenderId: "1074201274478",
-      appId: "1:1074201274478:web:ed196b9b5e0b2a9272de7f"
+      apiKey: "AIzaSyDzrnhYTfrJfe1pB68YM6929VrU3tiNDM8",
+      authDomain: "kwitter-smartieschat.firebaseapp.com",
+      databaseURL:"https://kwitter-smartieschat-default-rtdb.firebaseio.com/",
+      projectId: "kwitter-smartieschat",
+      storageBucket: "kwitter-smartieschat.appspot.com",
+      messagingSenderId: "1035024728640",
+      appId: "1:1035024728640:web:9fc7946442ba6e1bb355a5"
     };
     firebase.initializeApp(firebaseConfig);
 function getData() {firebase.database().ref("/").on('value', function(snapshot) {document.getElementById("output").innerHTML = "";snapshot.forEach(function(childSnapshot) {childKey  = childSnapshot.key;
@@ -15,3 +15,4 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
       //End code
       });});}
 getData();
+
