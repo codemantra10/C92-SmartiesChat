@@ -15,14 +15,17 @@ function getData() {firebase.database().ref("/").on('value', function(snapshot) 
        Room_names = childKey;
       //Start code
  console.log(Room_names);
- row="<div class='room_name'id="+ Room_names +"onclick='redirectroomname(this.id)'>"+Room_names+"</div> <hr>";
- document.getElementById("output").innerHTML += row;
- 
+ //row="<div class='room_name'id="+ Room_names +"onclick='redirectroomname(this.id)'>"+Room_names+"</div> <hr>";
+ //document.getElementById("output").innerHTML += row;
+ row = "<div class='room_name' id="+Room_names+" onclick='redirectToRoomName(this.id)' >#"+ Room_names +"</div><hr>";
+  document.getElementById("output").innerHTML += row;
       //End code
       });});}
 getData();
 function logout(){
 window.location="index.html";
+localStorage.removeItem("fanofssname");
+localStorage.removeItem("privateroomname");
 }
 function createroom(){
 roomname=document.getElementById("personalroomname").value;
@@ -32,7 +35,7 @@ purpose:"addingroom"
 localStorage.setItem("privateroomname",roomname);
 window.location="kwitter_page.html";
 }
-function redirecttoroomname(name){
+function redirectToRoomName(name){
 console.log(name);
 localStorage.setItem("privateroomname",name);
 window.location="kwitter_page.html";
